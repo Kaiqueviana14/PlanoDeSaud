@@ -9,6 +9,6 @@ package SaudeMaisOuMenos;
  *
  * @author kakap
  */
-public class AtendenteSAC {
+public class LoginFrame {
     
 }

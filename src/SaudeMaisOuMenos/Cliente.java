@@ -1,102 +1,83 @@
 package SaudeMaisOuMenos;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente extends Pessoa {
-
-    public String nSUS;
-    public Dependente d;
-    String nome;
-    String dataDeNascimento;
-    String cpf;
-    int idade;
-    PlanoSaude PlanoSaude;
-    static List<Dependente> dependentes = new ArrayList<>();
-    static List<Venda> vendas = new ArrayList<>();
-
-    public Cliente(String nome, String cpf, int idade, String dataDeNascimento) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.idade = idade;
-        this.dataDeNascimento = dataDeNascimento;
-        this.PlanoSaude = null;
-        this.dependentes = new ArrayList<>();
+    public static enum StatusDoCliente {Ativo, Inativo,Possivel};   
+    private String numSUS;
+    private StatusDoCliente tipoDeCliente;
+    private PlanoSaude nomeDoPlano;
+    private LocalDate dataDeAquisicaoDoPlano;
+    private String dataDeAquisicaoDoPlanoString;
+    
+    public Cliente(){
+    }
+   @Override
+    public void pegarDados (BancoDeDados bancoDeDados, Usuario.Status status){    
+        super.pegarDados(bancoDeDados, status);
+        this.tipoDeCliente = Cliente.StatusDoCliente.Possivel;
+        System.out.print("Informe o número do Cartão do SUS: ");
+        this.numSUS = ler.nextLine();
+    }
+    public void mostrarTipoDoCliente () {    
+        System.out.print("\tTipoDoCliente: " + getTipoDeCliente());
+    }
+    
+    @Override
+    public void mostrarDados () {
+        super.mostrarDados();
+        System.out.print("\tNúmeroDoCartãoDoSUS: " + getNumSUS());
     }
 
-    public String getNome() {
-        return nome;
+    public String getNumSUS() {
+        return numSUS;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNumSUS(String numSUS) {
+        this.numSUS = numSUS;
     }
 
-    public String getDataDeNascimento() {
-        return dataDeNascimento;
+    public StatusDoCliente getTipoDeCliente() {
+        return tipoDeCliente;
     }
 
-    public void setDataDeNascimento(String dataDeNascimento) {
-        this.dataDeNascimento = dataDeNascimento;
+    public void setTipoDeCliente(StatusDoCliente tipoDeCliente) {
+        this.tipoDeCliente = tipoDeCliente;
     }
 
-    public String getCpf() {
-        return cpf;
+    public PlanoSaude getNomeDoPlano() {
+        return nomeDoPlano;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setNomeDoPlano(PlanoSaude nomeDoPlano) {
+        this.nomeDoPlano = nomeDoPlano;
     }
 
-    public int getIdade() {
-        return idade;
+    public LocalDate getDataDeAquisicaoDoPlano() {
+        return dataDeAquisicaoDoPlano;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setDataDeAquisicaoDoPlano(LocalDate dataDeAquisicaoDoPlano) {
+        this.dataDeAquisicaoDoPlano = dataDeAquisicaoDoPlano;
     }
 
-    public static List<Venda> getVendas() {
-        return vendas;
+    public String getDataDeAquisicaoDoPlanoString() {
+        return dataDeAquisicaoDoPlanoString;
     }
 
-    public static void setVendas(List<Venda> vendas) {
-        Cliente.vendas = vendas;
-    }
-    public void setPlanoSaude(PlanoSaude planoSaude) {
-        this.PlanoSaude = planoSaude;
-    }
-     public String getStatusPlanoSaude() {
-        if (PlanoSaude != null) {
-            return "Ativo";
-        } else {
-            return "Cancelado";
-        }
+    public void setDataDeAquisicaoDoPlanoString(String dataDeAquisicaoDoPlanoString) {
+        this.dataDeAquisicaoDoPlanoString = dataDeAquisicaoDoPlanoString;
     }
 
-    public void adicionarDependente(Dependente dependente) {
-        dependentes.add(dependente);
+    public Cliente(String numSUS, StatusDoCliente tipoDeCliente, PlanoSaude nomeDoPlano, LocalDate dataDeAquisicaoDoPlano, String dataDeAquisicaoDoPlanoString, String nome, String cpf, String endereco, String telefone, String email, String sexo, LocalDate dataDeNascimento) {
+        super(nome, cpf, endereco, telefone, email, sexo, dataDeNascimento);
+        this.numSUS = numSUS;
+        this.tipoDeCliente = tipoDeCliente;
+        this.nomeDoPlano = nomeDoPlano;
+        this.dataDeAquisicaoDoPlano = dataDeAquisicaoDoPlano;
+        this.dataDeAquisicaoDoPlanoString = dataDeAquisicaoDoPlanoString;
     }
-
-    public void removerDependente(Dependente dependente) {
-        dependentes.remove(dependente);
-    }
-
-    public List<Dependente> getDependentes() {
-        return dependentes;
-    }
-
-    public boolean possuiDependentes() {
-        return !dependentes.isEmpty();
-    }
-
-    public void cancelarPlanoSaude() {
-        if (PlanoSaude != null) {
-            PlanoSaude = null;
-            System.out.println("Plano de Saúde cancelado com sucesso!");
-        } else {
-            System.out.println("O cliente não possui um Plano de Saúde ativo.");
-        }
-    }
-
+    
 }
