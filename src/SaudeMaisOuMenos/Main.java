@@ -9,15 +9,15 @@ public class Main{
 
     
     public static void main(String[] args) {
-       
-       
-        int opcao = -1;  
-        
-        Scanner leitor = new Scanner(System.in);
       
         
+        int opcao = 0;  
+        
+        Scanner leitor = new Scanner(System.in);
+        
+        
         do {
-            Cadastro.exibe_menu_Inicial();
+            
             opcao = leitor.nextInt();
             
 

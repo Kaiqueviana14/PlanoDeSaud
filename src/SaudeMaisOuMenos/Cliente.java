@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente extends Pessoa {
-    public static enum StatusDoCliente {Ativo, Inativo,Possivel};   
+    static enum StatusDoCliente {Ativo, Inativo,Possivel};   
     private String numSUS;
     private StatusDoCliente tipoDeCliente;
     private PlanoSaude nomeDoPlano;

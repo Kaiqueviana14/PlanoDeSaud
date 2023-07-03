@@ -6,16 +6,10 @@ import java.util.logging.Logger;
 import java.util.Scanner;
 
 public class Menu extends Operador{
-    
-
-
-
-
-
+ 
     static Scanner ler = new Scanner(System.in);
 
-   
-   
+    
     static void atalhoParaExibirTodosOsFuncionarios() {
         exibir.imprimirListaGeral(bancoDeDados);
     }
@@ -28,35 +22,35 @@ public class Menu extends Operador{
             case Administrador: {
                 do {
                     
-                    exibe_menu_Administrador();
+                    exibeMenuAdministrador();
                     opcao = ler.nextInt();
-                    executa_menu_Administrador(opcao);
+                    executaMenuAdministrador(opcao);
                 } while (opcao != 13);
                 break;
             }
             case Gerente: {
                 do {
                     
-                    exibe_menu_Gerente();
+                    exibeMenuGerente();
                     opcao = ler.nextInt();
-                    executa_menu_Gerente(opcao);
+                    executaMenuGerente(opcao);
                 } while (opcao != 11);
                 break;
             }
             case Vendedor: {
                 do {
                     
-                    exibe_menu_Vendedor();
+                    exibeMenuVendedor();
                     opcao = ler.nextInt();
-                    executa_menu_Vendedor(opcao);
+                    executaMenuVendedor(opcao);
                 } while (opcao != 4);
                 break;
             }
             case Atendente: {
                  do{
-                     exibe_menu_Atendente();
+                     exibeMenuAtendente();
                      opcao = ler.nextInt();
-                    executa_menu_Atendente(opcao);
+                    executaMenuAtendente(opcao);
                  }while(opcao!=4);
                 break;
             }

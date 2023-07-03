@@ -1,5 +1,7 @@
 package SaudeMaisOuMenos;
 
+import javax.swing.SwingUtilities;
+
 
 public class Operador extends Cadastro{
     
@@ -16,7 +18,7 @@ public class Operador extends Cadastro{
     static PlanoSaude plano = new PlanoSaude();
     static Especialidade especialidades= new Especialidade();
     
-    static void executa_menu_Administrador(int opcao){
+    static void executaMenuAdministrador(int opcao){
         
         switch(opcao){
             case 1: {
@@ -76,7 +78,7 @@ public class Operador extends Cadastro{
         }
     }
     
-    static void executa_menu_Gerente(int opcao){
+    static void executaMenuGerente(int opcao){
         
         switch(opcao){
             case 1: {
@@ -112,11 +114,11 @@ public class Operador extends Cadastro{
                 break;
             }
             case 9: {
-                System.out.println("\nAinda falta terminar ou começar 'aplicar bonificação' :D");
+                System.out.println("\n--------------");
                 break;
             }
             case 10: {
-                System.out.println("\nAinda falta terminar ou começar 'realizar pagamento' :D");
+                System.out.println("\n--------------");
                 break;
             }
             case 0: {
@@ -128,7 +130,7 @@ public class Operador extends Cadastro{
         }
     }
     
-    static void executa_menu_Vendedor(int opcao){
+    static void executaMenuVendedor(int opcao){
         
         switch(opcao){
             case 1: {
@@ -146,8 +148,8 @@ public class Operador extends Cadastro{
         }
     }
     
-    static void executa_menu_Atendente(int opcao){
-        
+    static void executaMenuAtendente(int opcao){
+        SwingUtilities.invokeLater(AtendenteJframe::new);
         switch(opcao){
            
             case 1: {

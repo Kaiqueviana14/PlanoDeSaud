@@ -5,8 +5,13 @@ package SaudeMaisOuMenos;
  * @author kakap
  */
 public class Cadastro {
+    static void exibeMenuCadastrarPrimeiro(){
+        System.out.printf("\n\n-------- MENU INICIA PROJETO -------\n\n");        
+        System.out.println("1. Cadastrar Adm");
+        System.out.println("");  
+    }
 
-    static void exibe_menu_Inicial (){
+    static void exibeMenuInicial (){
         System.out.printf("\n\n-------- MENU INICIAL -------\n\n");        
         System.out.println("1. Fazer Login");
         System.out.println("2. Imprimir Lista Geral");
@@ -14,7 +19,7 @@ public class Cadastro {
         System.out.println("");  
     }
     
-    static void exibe_menu_Administrador(){
+    static void exibeMenuAdministrador(){
         System.out.printf("\n\n--------- MENU PRINCIPAL ----------\n\n");        
         System.out.println("1. Alterar Dados Pessoais;");
         System.out.println("2. Imprimir Dados Pessoais;");
@@ -32,7 +37,7 @@ public class Cadastro {
         System.out.println("");  
     }
     
-    static void exibe_menu_Gerente(){
+    static void exibeMenuGerente(){
         System.out.printf("\n\n-------- MENU PRINCIPAL ---------\n\n");                
         System.out.println("1. Cadastrar Vendedor;");
         System.out.println("2. Demitir Vendedor;"); 
@@ -46,14 +51,14 @@ public class Cadastro {
         System.out.println("");  
     }
     
-    static void exibe_menu_Vendedor(){
+    static void exibeMenuVendedor(){
         System.out.printf("\n\n########## MENU PRINCIPAL ##########\n\n");        
         System.out.println("1. Imprimir Lista De Possiveis Clientes;");
         System.out.println("0. Sair;");
         System.out.println("");  
     }
    
-    static void exibe_menu_Atendente(){
+    static void exibeMenuAtendente(){
         System.out.printf("\n\n########## MENU PRINCIPAL ##########\n\n");        
         System.out.println("1. Cadastrar Possível Cliente;");
         System.out.println("2. Cadastrar Dependente;"); 
