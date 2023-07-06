@@ -7,13 +7,24 @@ import java.util.List;
 public class Cliente extends Pessoa {
     static enum StatusDoCliente {Ativo, Inativo,Possivel};   
     private String numSUS;
+    private String nomeDoPlano;
     private StatusDoCliente tipoDeCliente;
-    private PlanoSaude nomeDoPlano;
     private LocalDate dataDeAquisicaoDoPlano;
     private String dataDeAquisicaoDoPlanoString;
     
     public Cliente(){
     }
+
+    public Cliente(String numSUS, String nomeDoPlano, StatusDoCliente tipoDeCliente, LocalDate dataDeAquisicaoDoPlano, String dataDeAquisicaoDoPlanoString, String nome, String cpf, String endereco, String telefone, String email, String sexo, LocalDate dataDeNascimento) {
+        super(nome, cpf, endereco, telefone, email, sexo, dataDeNascimento);
+        this.numSUS = numSUS;
+        this.nomeDoPlano = nomeDoPlano;
+        this.tipoDeCliente = tipoDeCliente;
+        this.dataDeAquisicaoDoPlano = dataDeAquisicaoDoPlano;
+        this.dataDeAquisicaoDoPlanoString = dataDeAquisicaoDoPlanoString;
+    }
+
+    
    @Override
     public void pegarDados (BancoDeDados bancoDeDados, Usuario.Status status){    
         super.pegarDados(bancoDeDados, status);
@@ -47,11 +58,11 @@ public class Cliente extends Pessoa {
         this.tipoDeCliente = tipoDeCliente;
     }
 
-    public PlanoSaude getNomeDoPlano() {
+    public String getNomeDoPlano() {
         return nomeDoPlano;
     }
 
-    public void setNomeDoPlano(PlanoSaude nomeDoPlano) {
+    public void setNomeDoPlano(String nomeDoPlano) {
         this.nomeDoPlano = nomeDoPlano;
     }
 
@@ -70,14 +81,4 @@ public class Cliente extends Pessoa {
     public void setDataDeAquisicaoDoPlanoString(String dataDeAquisicaoDoPlanoString) {
         this.dataDeAquisicaoDoPlanoString = dataDeAquisicaoDoPlanoString;
     }
-
-    public Cliente(String numSUS, StatusDoCliente tipoDeCliente, PlanoSaude nomeDoPlano, LocalDate dataDeAquisicaoDoPlano, String dataDeAquisicaoDoPlanoString, String nome, String cpf, String endereco, String telefone, String email, String sexo, LocalDate dataDeNascimento) {
-        super(nome, cpf, endereco, telefone, email, sexo, dataDeNascimento);
-        this.numSUS = numSUS;
-        this.tipoDeCliente = tipoDeCliente;
-        this.nomeDoPlano = nomeDoPlano;
-        this.dataDeAquisicaoDoPlano = dataDeAquisicaoDoPlano;
-        this.dataDeAquisicaoDoPlanoString = dataDeAquisicaoDoPlanoString;
-    }
-    
 }

@@ -8,16 +8,18 @@ public class Exibicao {
     public void imprimirListaGeral (BancoDeDados bancoDeDados) {
          
         int qtd = 1;
-        System.out.println("\n********Exibe Todos os Funcionários********\n");
+        System.out.println("\n----------Exibe Todos os Funcionários----------\n");
        
-        for (Usuario funcionario: bancoDeDados.getUsuario()) { 
-            System.out.print(qtd);
+       
            
-            funcionario.mostrarDados();
+            imprimirListaDeAdministrador(bancoDeDados);
+            imprimirListaDeAtendentes(bancoDeDados);
+            imprimirListaDeGerentes(bancoDeDados);
+            imprimirListaDeVendedores(bancoDeDados);
             System.out.println("");
             qtd++;   
             
-        }  
+        
     }
     
     public void imprimirListaDeAdministrador (BancoDeDados bancoDeDados) {
@@ -42,7 +44,7 @@ public class Exibicao {
             System.out.print("\nNenhum Gerente foi cadastrado até o momento!");
         } else { 
             int qtd = 1;
-            System.out.println("\n********Exibe Lista de Gerentes********\n");
+            System.out.println("\n0--------Exibe Lista de Gerentes--------\n");
            
             for (Usuario gerente: bancoDeDados.getUsuario()) {
                 if(gerente.getQualprof()==Usuario.Status.Gerente) {
@@ -71,13 +73,13 @@ public class Exibicao {
         }
     }
     
-    public void imprimirListaDeVededores (BancoDeDados bancoDeDados) {
+    public void imprimirListaDeVendedores (BancoDeDados bancoDeDados) {
         
         if(qtdVendedores == 0) {
             System.out.print("\nNenhum Vendedor foi cadastrado até o momento!");
         } else { 
             int qtd = 1;
-            System.out.println("\n********Exibe Lista de Vendedores********\n");
+            System.out.println("\n---------Exibe Lista de Vendedores-------\n");
            
            for (Usuario vendedor: bancoDeDados.getUsuario()) {
                 if(vendedor.getQualprof()==Usuario.Status.Vendedor) {
@@ -97,7 +99,7 @@ public class Exibicao {
             System.out.print("\nNenhum Atendente foi cadastrado até o momento!");
         } else { 
             int qtd = 1;
-            System.out.println("\n********Exibe Lista de Atendentes********\n");
+            System.out.println("\n---------Exibe Lista de Atendentes--------\n");
            
             for (Usuario atendente: bancoDeDados.getUsuario()) {
                 if(atendente.getQualprof()==Usuario.Status.Atendente) {
@@ -165,7 +167,7 @@ public class Exibicao {
     
     public void imprimirListaDeSalarios (BancoDeDados bancoDeDados) {
         
-        System.out.println("\n********Exibe Salário dos Funcionários********\n");
+        System.out.println("\n---------Exibe Salário dos Funcionários---------\n");
         System.out.printf("\nGerente: R$%.2f", bancoDeDados.getSalarios().get(0));
         System.out.printf("\nVendedor: R$%.2f", bancoDeDados.getSalarios().get(1));
         System.out.printf("\nAtendente: R$%.2f", bancoDeDados.getSalarios().get(2));

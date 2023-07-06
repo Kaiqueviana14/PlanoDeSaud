@@ -1,18 +1,36 @@
 package SaudeMaisOuMenos;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class Adm extends Funcionario {
 
     static int qtdGerentes = 0;
+    static int qtdAdms = 0;
 
     public Adm() {
 
     }
 
-    public Adm(String nome, String cpf, String endereco, String telefone, String email, String sexo, LocalDate dataDeNascimento, String nomeDeUsuario, String senha, Usuario.Status qualprof, String nCtps, double salario, LocalDate dataDeContratacao, LocalTime horaDeInicioDoExpediente, LocalTime horaDeTerminoDoExpediente) {
-        super(nome, cpf, endereco, telefone, email, sexo, dataDeNascimento, nomeDeUsuario, senha, qualprof, nCtps, salario, dataDeContratacao, horaDeInicioDoExpediente, horaDeTerminoDoExpediente);
+    public Adm (String nome, String cpf, String endereco, String telefone, 
+            String email, String sexo, LocalDate dataDeNascimento, 
+            String nomeDeUsuario, String senha, Status tipoDeUsuario){
+        super(nome, cpf, endereco, telefone, email, sexo, dataDeNascimento, nomeDeUsuario, senha, tipoDeUsuario);
+    }
+    
+    public void cadastrarAdm(BancoDeDados bancoDeDados) {
+
+        Adm adm = new Adm();
+
+        System.out.println("\n------Cadastro de Administrador------\n");
+        System.out.println("Total de Administradores cadastrados até o momento: "
+                + qtdAdms);
+        System.out.println("");
+
+        adm.pegarDados(bancoDeDados, Status.Administrador);
+        bancoDeDados.getUsuario().add(adm);
+        qtdAdms++;
+        System.out.print("\n------Administrador cadastrado com sucesso!------");
+
     }
 
     public void cadastrarGerente(BancoDeDados bancoDeDados) {

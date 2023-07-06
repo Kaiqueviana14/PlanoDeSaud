@@ -6,19 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Vendedor extends Funcionario {
-
     private double bonificacao;
-    private PlanoSaude planoResponsavel;
+   
     private int qtdPlanosVendidos;
 
     public Vendedor() {
         
     }
 
-    public Vendedor(double bonificacao, PlanoSaude planoResponsavel, int qtdPlanosVendidos, String nome, String cpf, String endereco, String telefone, String email, String sexo, LocalDate dataDeNascimento, String nomeDeUsuario, String senha, Status qualprof, String nCtps, double salario, LocalDate dataDeContratacao, LocalTime horaDeInicioDoExpediente, LocalTime horaDeTerminoDoExpediente) {
+    public Vendedor(double bonificacao, int qtdPlanosVendidos, String nome, String cpf, String endereco, String telefone, String email, String sexo, LocalDate dataDeNascimento, String nomeDeUsuario, String senha, Status qualprof, String nCtps, double salario, LocalDate dataDeContratacao, LocalTime horaDeInicioDoExpediente, LocalTime horaDeTerminoDoExpediente) {
         super(nome, cpf, endereco, telefone, email, sexo, dataDeNascimento, nomeDeUsuario, senha, qualprof, nCtps, salario, dataDeContratacao, horaDeInicioDoExpediente, horaDeTerminoDoExpediente);
         this.bonificacao = bonificacao;
-        this.planoResponsavel = planoResponsavel;
+      
         this.qtdPlanosVendidos = qtdPlanosVendidos;
     }
     public void verificarListaDePossiveisClientes (Exibicao exibir, BancoDeDados bancoDeDados){
@@ -33,7 +32,7 @@ public class Vendedor extends Funcionario {
     public void mostrarDados () {
         super.mostrarDados();
         System.out.printf("\tBonificação: R$%.2f", getBonificacao());
-        System.out.print("\tPlanoDeSaúdeResponsável: " + getPlanoResponsavel());
+        
         System.out.print("\tQuantidade de Planos Vendidos: " + getQtdPlanosVendidos());
     }
 
@@ -45,14 +44,7 @@ public class Vendedor extends Funcionario {
         this.bonificacao = bonificacao;
     }
 
-    public PlanoSaude getPlanoResponsavel() {
-        return planoResponsavel;
-    }
-
-    public void setPlanoResponsavel(PlanoSaude planoResponsavel) {
-        this.planoResponsavel = planoResponsavel;
-    }
-
+   
     public int getQtdPlanosVendidos() {
         return qtdPlanosVendidos;
     }

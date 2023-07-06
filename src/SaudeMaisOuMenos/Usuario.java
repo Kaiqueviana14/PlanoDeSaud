@@ -64,7 +64,7 @@ public class Usuario extends Pessoa {
         System.out.println("\n------Login------\n");
 
         while (usuario == null) {
-            System.out.print("Informe o nome de usuário: ");
+            System.out.printf("Informe o nome de usuário: ");
             String NomeUsuarioinfo = ler.nextLine();
             System.out.print("Informe sua senha: ");
             String Senhainfo = ler.nextLine();

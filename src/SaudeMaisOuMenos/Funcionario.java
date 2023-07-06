@@ -21,6 +21,11 @@ public class Funcionario extends Usuario {
     public Funcionario() {
 
     }
+    public Funcionario (String nome, String cpf, String endereco, String telefone, 
+            String email, String sexo, LocalDate dataDeNascimento, 
+            String nomeDeUsuario, String senha, Status tipoDeUsuario) {
+        super(nome, cpf, endereco, telefone, email, sexo, dataDeNascimento, nomeDeUsuario, senha, tipoDeUsuario);
+    }
 
     public Funcionario(String nome, String cpf, String endereco, String telefone,
             String email, String sexo, LocalDate dataDeNascimento,

@@ -1,5 +1,6 @@
 package SaudeMaisOuMenos;
 
+import java.util.Scanner;
 import javax.swing.SwingUtilities;
 
 
@@ -17,60 +18,72 @@ public class Operador extends Cadastro{
     static Cliente cliente = new Cliente();
     static PlanoSaude plano = new PlanoSaude();
     static Especialidade especialidades= new Especialidade();
+    static CriadorDeUsuarios criar = new CriadorDeUsuarios();
+    static Scanner ler = new Scanner(System.in);
     
+    static void executaMenuCadastrarPrimeiro(int opcao){ 
+        
+       switch(opcao){
+            case 1: {
+                adm.cadastrarAdm(bancoDeDados); ;
+                break;
+            }
+            case 0:
+                    System.out.print("\nSaindo!\n\n");
+                    break;
+                default:
+                    System.out.println("\nOpção inválida!");
+        }
+    }
     static void executaMenuAdministrador(int opcao){
         
         switch(opcao){
             case 1: {
-                adm.editarDados(bancoDeDados);
-                break;
-            }
-            case 2: {
                 exibir.imprimirListaDeAdministrador(bancoDeDados);
                 break;
             }
-            case 3: {
+            case 2: {
                 adm.cadastrarGerente(bancoDeDados);
                 break;
             }
-            case 4: {
+            case 3: {
                 adm.demitirFuncionario(bancoDeDados, exibir, Usuario.Status.Gerente);
                 break;
             }
-            case 5: {
+            case 4: {
                 adm.editarDados(bancoDeDados);
                 break;
             }
-            case 6: {
+            case 5: {
                 exibir.imprimirListaDeGerentes(bancoDeDados);
                 break;
             }
-            case 7: {
+            case 6: {
                 adm.cadastrarPlanoDeSaude(bancoDeDados);
                 break;
             }
-            case 8: {
+            case 7: {
                 adm.deletarPlano(bancoDeDados,exibir);
                 break;
             }
-            case 9: {
+            case 8: {
                 adm.editarPlanoDeSaude(bancoDeDados, exibir);
                 break;
             }
-            case 10: {
+            case 9: {
                 exibir.imprimirListaDePlanosDeSaude(bancoDeDados);
                 break;
             }
-            case 11: {
+            case 10: {
                adm.editarSalario(bancoDeDados,exibir);
                 break;
             }
-            case 12: {
+            case 11: {
                exibir.imprimirListaDeSalarios(bancoDeDados);
                 break;
             }
             case 0: {
-               usuario.deslogar();
+                    Menu.alteraPagina();
                 break;
             }
             default:
@@ -94,7 +107,7 @@ public class Operador extends Cadastro{
                 break;
             }
             case 4: {
-                exibir.imprimirListaDeVededores(bancoDeDados);
+                exibir.imprimirListaDeVendedores(bancoDeDados);
                 break;
             }
             case 5: {
@@ -122,12 +135,15 @@ public class Operador extends Cadastro{
                 break;
             }
             case 0: {
-                usuario.deslogar();
+                Menu.alteraPagina();
                 break;
             }
             default:
                 System.out.println("\nOpção Inválida");
+                break;
+                
         }
+        
     }
     
     static void executaMenuVendedor(int opcao){
@@ -139,7 +155,8 @@ public class Operador extends Cadastro{
             }
             
             case 0: {
-                usuario.deslogar();
+               
+                    Menu.alteraPagina();
                 break;
             }
             
@@ -149,7 +166,7 @@ public class Operador extends Cadastro{
     }
     
     static void executaMenuAtendente(int opcao){
-        SwingUtilities.invokeLater(AtendenteJframe::new);
+       
         switch(opcao){
            
             case 1: {
@@ -161,7 +178,8 @@ public class Operador extends Cadastro{
                 break;
             }
             case 0: {
-                usuario.deslogar();
+                
+                    Menu.alteraPagina();
                 break;
             }
             default:

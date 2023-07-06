@@ -33,7 +33,7 @@ public class Gerente extends Funcionario{
             System.out.println("");
       
             novoVendedor.pegarDados(bancoDeDados, Usuario.Status.Vendedor);
-            novoVendedor.setPlanoResponsavel(escolherPlanoDoVendedor(bancoDeDados, exibir));
+            ;
             bancoDeDados.getUsuario().add(novoVendedor);
             qtdVendedores++;
       
