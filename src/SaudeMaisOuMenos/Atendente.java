@@ -83,7 +83,6 @@ public class Atendente extends Funcionario {
             Dependente d = new Dependente();
 
             d.setClienteResponsavel(bancoDeDados.getClientes().get(posicao).getNome());
-            d.setNomeDoPlano(bancoDeDados.getClientes().get(posicao).getNomeDoPlano());
             d.pegarDados(bancoDeDados, Status.Null);
 
             bancoDeDados.getDependentes().add(d);

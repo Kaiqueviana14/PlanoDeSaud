@@ -58,12 +58,13 @@ public class Usuario extends Pessoa {
     }
 
     public Status Login(BancoDeDados bancoDeDados) {
-
+        
         Status usuario = null;
 
         System.out.println("\n------Login------\n");
 
         while (usuario == null) {
+           
             System.out.printf("Informe o nome de usuário: ");
             String NomeUsuarioinfo = ler.nextLine();
             System.out.print("Informe sua senha: ");

@@ -106,7 +106,7 @@ public class ferramentas {
                     exibir.imprimirListaDeGerentes(bancoDeDados);
                         break;
                 case Vendedor:
-                    exibir.imprimirListaDeVededores(bancoDeDados);
+                    exibir.imprimirListaDeVendedores(bancoDeDados);
                         break;
                 case Atendente:
                     exibir.imprimirListaDeAtendentes(bancoDeDados);
@@ -155,7 +155,7 @@ public class ferramentas {
                     exibir.imprimirListaDeGerentes(bancoDeDados);
                         break;
                 case Vendedor:
-                    exibir.imprimirListaDeVededores(bancoDeDados);
+                    exibir.imprimirListaDeVendedores(bancoDeDados);
                         break;
                 case Atendente:
                     exibir.imprimirListaDeAtendentes(bancoDeDados);
