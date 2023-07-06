@@ -45,7 +45,7 @@ public class Atendente extends Funcionario {
 
         Cliente cliente = new Cliente();
 
-        System.out.println("\n********Cadastro de Cliente********\n");
+        System.out.println("\n------Cadastro de Cliente---------\n");
         System.out.println("Total de Clientes cadastrados até o momento: "
                 + bancoDeDados.getClientes().size());
         System.out.println("");

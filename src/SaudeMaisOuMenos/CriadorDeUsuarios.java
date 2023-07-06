@@ -60,6 +60,14 @@ public class CriadorDeUsuarios {
         bancoDeDados.getClientes().add(cliente3);
         
     }  
+    public void criandoDependente(BancoDeDados bandoDeDados){
+        Dependente dependente= new Dependente("Kaique11", "Kaique14", "123" , "endereco", "telefone", "email", "sexo", LocalDate.MIN);
+        bandoDeDados.getDependentes().add(dependente);
+        Dependente dependente2= new Dependente("Kaique12", "Kaique15", "123" , "endereco", "telefone", "email", "sexo", LocalDate.MIN);
+        bandoDeDados.getDependentes().add(dependente2);
+        Dependente dependente3= new Dependente("Kaique13", "Kaique16", "123" , "endereco", "telefone", "email", "sexo", LocalDate.MIN);
+        bandoDeDados.getDependentes().add(dependente3);
+    }
     public void criandoEspecialidade(BancoDeDados bancoDeDados){
         Especialidade especialidade = new Especialidade("Kaique11", "Clinico Geral",250.0 );
         bancoDeDados.getEspecialidades().add(especialidade);
